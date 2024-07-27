@@ -21,8 +21,9 @@ Thoughts:
 ### How to run
 
 ```
-php -S localhost:8000
+python3 app.py --port 5000
 ```
+Default port is 8000
 
 Place a bunch of `.md` files in the `/tpls/` dir. They should show up in the dropdown. It saves now on every keystroke and will remember the data using localStorage. It will also reuse the variables if you switch template. 
 

@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, request, send_from_directory
 import os
+import argparse
 
 app = Flask(__name__)
 
@@ -29,4 +30,7 @@ def send_template(path):
     return send_from_directory('tpls', path)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8000)
+    parser = argparse.ArgumentParser(description='Run the Flask server.')
+    parser.add_argument('--port', type=int, default=8000, help='Port to run the Flask server on')
+    args = parser.parse_args()
+    app.run(host='0.0.0.0', port=args.port)
